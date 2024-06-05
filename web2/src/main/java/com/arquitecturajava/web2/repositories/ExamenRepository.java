@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.arquitecturajava.web2.models.Examen;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 
 @Repository
 public class ExamenRepository {
@@ -28,5 +29,15 @@ public class ExamenRepository {
 	public List<Examen> buscarTodos() {
 		
 		return em.createQuery("select e from Examen e",Examen.class).getResultList();
+	}
+	
+	public Examen buscarUno(int id) {
+		TypedQuery<Examen> consulta= em.createQuery("select e from Examen e where e.id=:id",Examen.class);
+		consulta.setParameter("id", id);
+		return consulta.getSingleResult();
+		
+		
+
+		
 	}
 }

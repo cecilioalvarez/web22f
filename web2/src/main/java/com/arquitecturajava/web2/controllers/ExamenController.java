@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.arquitecturajava.web2.models.Examen;
 import com.arquitecturajava.web2.services.ExamenService;
@@ -25,6 +26,14 @@ public class ExamenController {
 		modelo.addAttribute("lista", lista);
 
 		return "listaexamenes.xhtml";
+
+	}
+	@GetMapping("/ponernota")
+	public String ponernota(Model modelo, @RequestParam int id) {
+	
+		Examen e= examenService.buscarUno(id);
+		modelo.addAttribute("examen", e);
+		return "ponernota.xhtml";
 
 	}
 	

@@ -24,6 +24,10 @@ public class ExamenService {
 	public List<Examen> buscarTodos() {
 		return examenRepository.buscarTodos();
 	}
+
+	public Examen buscarUno(int id) {
+		return examenRepository.buscarUno(id);
+	}
 	
 	
 }
