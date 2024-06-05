@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.arquitecturajava.web2.models.Examen;
 
@@ -20,7 +21,7 @@ public class ExamenRepository {
 		
 		em.persist(examen);
 	}
-	
+	@Transactional
 	public void actualizar(Examen examen) {
 		
 		em.merge(examen);
