@@ -2,6 +2,7 @@ package com.arquitecturajava.web2.restcontroller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,7 @@ public class ExamenRestController {
 	@Autowired
 	private ExamenService examenService;
 	@PostMapping
-	public void insertar(ExamenDto examen) {
+	public void insertar(@RequestBody ExamenDto examen) {
 		
 		examenService.insertar(ExamenMapper.toBo(examen));
 	}
