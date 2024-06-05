@@ -3,10 +3,11 @@ package com.arquitecturajava.web2.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.arquitecturajava.web2.models.Examen;
 import com.arquitecturajava.web2.repositories.ExamenRepository;
-
+@Service
 public class ExamenService {
 
 	@Autowired

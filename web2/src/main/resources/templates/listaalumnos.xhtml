@@ -1,0 +1,14 @@
+<html>
+<body>
+	lista examenes
+	<table>
+		<tr th:each="examen : ${lista}">
+			<td th:text="${examen.id}"></td>
+			<td th:text="${examen.texto}"></td>
+			<td th:text="${examen.asignatura}"></td>
+			<td th:text="${examen.nota}"></td>
+			<td><a th:href="@{/ponernota(id = ${examen.id})}">poner nota</a></td>		</tr>
+	</table>
+	<a href="formularioalumno">nuevo</a>
+</body>
+</html>
