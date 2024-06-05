@@ -1,8 +1,8 @@
 <html>
 <body>
-	<form action="salvar">
-	<input type="hidden" name="id" th:text="${examen.id}"/>
-	<input type="text" name="nota" th:text="${examen.nota}"/>
+	<form action="salvar" method="post">
+	<input type="hidden" name="id" th:field="${examen.id}"/>
+	<input type="text" name="nota" th:field="${examen.nota}"/>
 	<input type="submit" value="salvar"/>
 	</form>
 </body>
